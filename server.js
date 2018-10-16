@@ -6,7 +6,9 @@ const methodOverride = require('method-override');
 //require('./db/db');
 
 
-
+app.get('/', (req, res) => {
+    res.render('index.ejs');
+});
 
 
 
