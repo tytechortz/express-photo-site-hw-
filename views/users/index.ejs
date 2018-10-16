@@ -7,7 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello</h1>
-    <a href="/users">Users</a>
+    <h1>PHOTOGRAPHERS</h1>
+    <ul>
+        <% for(let i = 0; i < users.length; i++) {%>
+        <li>
+            <%= users[i].name %>
+        </li>
+       <% }%>
+    </ul>
 </body>
 </html>
