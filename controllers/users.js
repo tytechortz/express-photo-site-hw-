@@ -19,7 +19,22 @@ router.get('/new', (req, res) => {
     res.render('users/new.ejs');
 });
 
+//
+router.get('/:id', (req, res) => {
+    User.findById(req.params.id, (err, foundUser) => {
+        res.render('users/show.ejs', {
+            user: foundUser
+        });
+    });
+});
 
+router.get('/:id/edit', (req, res) => {
+    User.findById(req.params.id, (err, foundUser) => {
+        res.render('users/edit.ejs', {
+            user: foundUser
+        });
+    });
+});
 
 
 module.exports = router;
