@@ -8,11 +8,15 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <a href="/">Home</a>
-        </ul>
+        <a href="/">Home</a>
+        <a href="/users">Users</a></li>
     </nav>
-    <h1>show page for <%= users.name%></h1>
+    <h1> <%= users.name %>'s Photos</h1>
+    <nav>
+        <ul> 
+            <li><a href="/users/<%=users.id%>/edit">Edit</a></li>
+            </ul>
+        </nav>
     
 </body>
 </html>
