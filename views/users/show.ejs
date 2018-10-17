@@ -7,6 +7,19 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <a href="/">Home</a>
+        </ul>
+    </nav>
     <h1>show page</h1>
+    <ul>
+            <% for(let i = 0; i < users.length; i++) {%>
+            <li>
+                <a href="/users/<%=users[i]._id%>"></a><%=users[i].name%></a>
+                <!-- <%= users[i].name %> -->
+            </li>
+           <% }%>
+        </ul>
 </body>
 </html>

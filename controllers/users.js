@@ -1,40 +1,65 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../models/users');
+const Users = require('../models/users');
 
 
 //Index route
 router.get('/', (req, res) => {
-    User.find({}, (err, foundUsers) => {
+    Users.find({}, (err, foundUsers) => {
         res.render('users/index.ejs', {
             users: foundUsers
         });       
     });
 });
 
-
 //New route
 router.get('/new', (req, res) => {
     res.render('users/new.ejs');
 });
 
-//
 router.get('/:id', (req, res) => {
-    User.findById(req.params.id, (err, foundUser) => {
+    Users.findById(req.params.id, (err, foundUser) => {
+        console.log(foundUser)
         res.render('users/show.ejs', {
-            user: foundUser
+            users: foundUser
         });
     });
 });
 
 router.get('/:id/edit', (req, res) => {
-    User.findById(req.params.id, (err, foundUser) => {
+    Users.findById(req.params.id, (err, foundUser) => {
         res.render('users/edit.ejs', {
-            user: foundUser
+            users: foundUser
         });
     });
 });
+
+
+router.post('/', (req, res) => {
+    Users.create(req.body, (err, createdUser) => {
+        
+        if(err){
+            console.log(err)
+          } else {
+            res.redirect('/users')
+          }
+        });
+});
+
+router.delete('/:id', (req, res) => {
+    Users.findByIdAndRemove(req.params.id, () => {
+        res.redirect('/users');
+    });
+});
+
+router.put('/:id', (req, res) => {
+    Users.findOneAndDelete(req.params.id, req.body, () => {
+        res.redirect('/users');
+
+    });
+});
+
 
 
 module.exports = router;

@@ -7,11 +7,22 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/users/new">New User</a></li>
+        </ul>
+    </nav>
+
     <h1>PHOTOGRAPHERS</h1>
+        <h4>Click Names to See Their Photos</h4>
+
     <ul>
         <% for(let i = 0; i < users.length; i++) {%>
         <li>
-            <%= users[i].name %>
+            <a href="/user/<%=users[i]._id%>"><%=users[i].name%></a>
+            <!-- <%= users[i].name %> -->
         </li>
        <% }%>
     </ul>
