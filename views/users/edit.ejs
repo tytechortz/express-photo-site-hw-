@@ -12,8 +12,8 @@
                 <li><a href="/">Home</a></li>
             </ul>
         </nav>
-        <h1>Edit Photographers</h1>
-        <form action="/users<%=users.id%>?_method=PUT" method='POST'>
+        <h1> <%= users.name %>'s Info</h1>
+        <form action="/users/<%=users.id%>?_method=PUT" method='POST'>
             Name: <input type="text" name="name" /><br/>
             Username: <input type="text" name="username" /><br/>
             Password: <input type="text" name="password"/><br/>

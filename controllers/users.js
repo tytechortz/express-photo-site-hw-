@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/:id/edit', (req, res) => {
-    Users.findById(req.body.id, (err, foundUser) => {
+    Users.findById(req.params.id, (err, foundUser) => {
         res.render('users/edit.ejs', {
             users: foundUser
         });
@@ -54,7 +54,7 @@ router.delete('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    Users.findOneAndDelete(req.params.id, req.query, () => {
+    Users.findByIdAndUpdate(req.params.id, req.body, () => {
         res.redirect('/users');
 
     });
