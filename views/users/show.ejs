@@ -12,14 +12,7 @@
             <a href="/">Home</a>
         </ul>
     </nav>
-    <h1>show page</h1>
-    <ul>
-            <% for(let i = 0; i < users.length; i++) {%>
-            <li>
-                <a href="/users/<%=users[i]._id%>"></a><%=users[i].name%></a>
-                <!-- <%= users[i].name %> -->
-            </li>
-           <% }%>
-        </ul>
+    <h1>show page for <%= users.name%></h1>
+    
 </body>
 </html>

@@ -38,7 +38,7 @@ router.get('/:id/edit', (req, res) => {
 
 router.post('/', (req, res) => {
     Users.create(req.body, (err, createdUser) => {
-        
+        console.log(req.body)
         if(err){
             console.log(err)
           } else {
