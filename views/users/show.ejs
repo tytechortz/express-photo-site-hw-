@@ -12,11 +12,15 @@
         <a href="/users">Users</a></li>
     </nav>
     <h1> <%= users.name %>'s Photos</h1>
-    <nav>
-        <ul> 
-            <li><a href="/users/<%=users.id%>/edit">Edit</a></li>
-            </ul>
-        </nav>
+
+        <a href="/users/<%=users.id%>/edit">Edit User</a>
+
+    <h3>Remove User</h3>
+
+    <form action="/users/<%= users.id %>?_method=DELETE" method="POST">
+        <input type="submit" value="delete user">
+    </form>
+    
     
 </body>
 </html>

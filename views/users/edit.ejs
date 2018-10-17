@@ -12,7 +12,7 @@
                 <li><a href="/">Home</a></li>
             </ul>
         </nav>
-        <h1> <%= users.name %>'s Info</h1>
+        <h1>Edit  <%= users.name %>'s Info</h1>
         <form action="/users/<%=users.id%>?_method=PUT" method='POST'>
             Name: <input type="text" name="name" /><br/>
             Username: <input type="text" name="username" /><br/>

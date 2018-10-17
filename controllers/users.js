@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    Users.findByIdAndRemove(req.body.id, () => {
+    Users.findByIdAndDelete(req.params.id, (err, removedUser) => {
         res.redirect('/users');
     });
 });
