@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     Users.findByIdAndDelete(req.params.id, (err, removedUser) => {
-        res.redirect('/users');
+        res.redirect('/users');  
     });
 });
 
